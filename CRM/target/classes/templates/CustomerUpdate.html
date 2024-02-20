@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+  <meta charset="UTF-8">
+  <title>Register Customer</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="p-2 fs-4 mb-2 bg-dark-subtle text-emphasis-dark"><b>CRM - Customer Relationship Manager</b></div>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" th:href="@{/customer/all}">Data</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" th:href="@{/customer/show}">Register</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+<h6> Update Data</h6><br>
+<form method="post" th:action="@{/customer/update}" th:object="${customer}">
+  <div class="mb-3">
+    <label for="formGroupExampleInput" class="form-label">ID</label>
+    <input type="text" class="form-control " th:field="*{custId}" readonly id="formGroupExampleInput" >
+  </div>
+  <div class="mb-3">
+    <label for="formGroupExampleInput" class="form-label">First Name</label>
+    <input type="text" class="form-control " th:field="*{custFname}" id="formGroupExampleInput1" placeholder="Enter first name..">
+  </div>
+  <div class="mb-3">
+    <label for="formGroupExampleInput2" class="form-label">Last Name</label>
+    <input type="text" class="form-control" th:field="*{custLname}" id="formGroupExampleInput2" placeholder="Enter last name..">
+  </div>
+  <div class="mb-3">
+    <label for="formGroupExampleInput2" class="form-label">Last Name</label>
+    <input type="text" class="form-control" th:field="*{custEmail}" id="formGroupExampleInput3" placeholder="Enter email id..">
+  </div><br>
+  <button type="submit" value="register" class="btn btn-outline-dark">Register</button>
+
+</form>
+</body>
+</html>
